@@ -1,0 +1,18 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+class UserSeeder extends Seeder
+{
+    public function run(): void
+    {
+        User::firstOrCreate(
+            ['email' => 'admin@kiosco.local'],
+            ['name' => 'Admin', 'password' => Hash::make('kiosco2026')]
+        );
+    }
+}
